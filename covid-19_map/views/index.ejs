@@ -69,7 +69,17 @@
         }
 
         for(var i = 0, ii = markerList.length; i < ii; i++){
+            //map을 클릭했을 때 함수 호출
+            naver.maps.Event.addListener(map,"click", ClickMap(i));
+            //마커를 클릭했을 때 함수 호출
             naver.maps.Event.addListener(markerList[i], "click", getClickHandler(i));
+        }
+
+        function ClickMap(i){
+            return function(){
+                var infowindow = infowindowList[i];
+                infowindow.close();
+            }
         }
 
         function getClickHandler(i){
