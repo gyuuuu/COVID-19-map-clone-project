@@ -75,3 +75,48 @@ body {
   cursor: pointer;
   font-weight: bolder;
 }
+
+.pulse {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgb(255,0,0);
+  animation: pulse 1.7s infinite;
+}
+
+/*시간대별로 애니메이션이 어떻게 작용할지 미리 설명 */
+@keyframes pulse{
+  0% {
+    box-shadow: 0 0 0 0 rgba(204, 49, 44, 0.4);
+    -moz-box-shadow: 0 0 0 0 rgba(204, 49, 44, 0.4); /* -moz- firfox에서도 적용되게함 */
+  }
+
+  70% {
+    box-shadow: 0 0 0 20px rgba(204, 49, 44, 0.4);
+    -moz-box-shadow: 0 0 0 20px rgba(204, 49, 44, 0.4);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(204, 49, 44, 0);
+    -moz-box-shadow: 0 0 0 0 rgba(204, 49, 44, 0);
+  }
+}
+
+@-webkit-keyframes pulse{ /* -webkit- chrome에서도 적용되게함 */
+  0% {
+    box-shadow: 0 0 0 0 rgba(204, 49, 44, 0.4);
+    -moz-box-shadow: 0 0 0 0 rgba(204, 49, 44, 0.4); 
+  }
+
+  70% {
+    box-shadow: 0 0 0 20px rgba(204, 49, 44, 0.4);
+    -moz-box-shadow: 0 0 0 20px rgba(204, 49, 44, 0.4);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(204, 49, 44, 0);
+    -moz-box-shadow: 0 0 0 0 rgba(204, 49, 44, 0);
+  }
+}
