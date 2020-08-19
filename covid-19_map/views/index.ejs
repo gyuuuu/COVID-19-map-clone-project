@@ -101,6 +101,8 @@
             }
         }
 
+        let currentUse = true;
+
         //현재위치 받아와서 지도위에 표시
         $('#current').click(()=>{
             if('geolocation' in navigator){
@@ -108,7 +110,9 @@
                     const lat = position.coords.latitude;
                     const lng = position.coords.longitude;
                     const latlng = new naver.maps.LatLng(lat,lng);
-                    marker = new naver.maps.Marker({
+                    //최초 1회만 마커가 생성되게 함.
+                    if(currentUse){
+                        marker = new naver.maps.Marker({
                         map: map,
                         position: latlng,
                         icon: {
@@ -116,6 +120,8 @@
                             anchor: new naver.maps.Point(11,11),
                         },
                     });
+                    currentUse = false;
+                    }
                     //zoom 땡기기
                     map.setZoom(14, false);
                     map.panTo(latlng);
