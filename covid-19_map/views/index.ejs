@@ -111,6 +111,10 @@
                     marker = new naver.maps.Marker({
                         map: map,
                         position: latlng,
+                        icon: {
+                            content: '<img class="pulse" "draggable"="false" unselectable="on" src="https://myfirstmap.s3.ap-northeast-2.amazonaws.com/circle.png">',
+                            anchor: new naver.maps.Point(11,11),
+                        },
                     });
                     //zoom 땡기기
                     map.setZoom(14, false);
