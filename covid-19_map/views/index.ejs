@@ -19,7 +19,14 @@
     <div id = "navbar">COVID map</div>
     <div id = "infoBox">
         <div id = "infoTitle">현재날짜</div>
-        <div id = "infoContent">2020.08.13</div>
+        <script>
+            var today = new Date();
+            var year = today.getFullYear(); // 년도
+            var month = today.getMonth() + 1;  // 월
+            var date = today.getDate();  // 날짜
+
+            document.write(year + '.'+ month + '.' + date)
+        </script>
     </div>
     <div id="current">현재 위치</div>
     <div id="map" style="width:100%;height:100vh;"></div>
