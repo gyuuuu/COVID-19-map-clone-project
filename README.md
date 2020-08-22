@@ -7,4 +7,4 @@
 3. 수동으로 확진자 업데이트
 4. 확장 가능성
 
-* 실제 코로나 맵 URL <https://coronamap.site>
+* 실제 코로나 맵 URL : <https://coronamap.site>
